@@ -1,0 +1,21 @@
+# Rangoli AR Detection
+
+This project has two section, one is training model that can detect Rangoli and second android application that uses this model with AR.
+
+## Training and creating Rangoli Model.
+1. Idea is start with a open source model such as Yolo11.
+2. Download all [Rangoli image from kagle](https://www.kaggle.com/datasets/ashish369/rangoli-images). Place it in dataset/allimages folder
+3. Download base model [yolo](https://docs.ultralytics.com/models/yolo11/#supported-tasks-and-modes) to folder models.
+3. Run main.py this does following things.
+  a. Read all images and convert them to Yolo consumable size.
+  b. Divide data in two folders training and validation, generate label json for them. Label is json file has id, x,y, height,widht of image. Ideally these should be done manually but since image are clean enough we could just use the directly.
+  c. Call yolo train with train image and label set. We could run multiple epoch on same data but 7 seems to be giving 90% above confidence. So keep it till there.
+4. After run completes a model file is generate Rangoli\runs\detect\train\weights\best_saved_model\best_float16.tflite
+
+
+## Create Android app.
+1. Download Android IDE.
+2. Import Android project.
+3. Move generated tflite file to android project assets folder.
+4. Create Emulator with Android 15.
+4. Run the project with latest Android 15 emulators.

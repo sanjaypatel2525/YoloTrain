@@ -1,0 +1,4 @@
+/model/yolo11n.pt
+.venv/
+run/
+.idea

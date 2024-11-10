@@ -1,0 +1,6 @@
+# rangoli.yaml
+path: C:/Users/dj525/home-server/Rangoli/dataset  # root directory for dataset
+train: images/train  # training images
+val: images/val  # validation images
+nc: 1  # number of classes
+names: ['rangoli']  # class names
